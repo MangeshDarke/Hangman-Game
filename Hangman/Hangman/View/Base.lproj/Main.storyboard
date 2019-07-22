@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hangman View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HangmanViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaM-Db-9O1">
+                                <rect key="frame" x="16" y="600" width="343" height="72"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="sZc-ud-aQa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
+                                <state key="normal" title="Play Game">
+                                    <color key="titleColor" red="0.092645950615406036" green="0.69587177038192749" blue="0.65854543447494507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="initiateGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kjM-cr-SeT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lu-le-OGv">
+                                <rect key="frame" x="16" y="95" width="343" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="otA-Yb-ogT"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman7" translatesAutoresizingMaskIntoConstraints="NO" id="nhE-BV-6Ou">
+                                <rect key="frame" x="16" y="212" width="343" height="256"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" image="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="AaM-Db-9O1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5A5-mD-NG6"/>
+                            <constraint firstItem="AaM-Db-9O1" firstAttribute="leading" secondItem="3lu-le-OGv" secondAttribute="leading" id="8Lx-sD-Nci"/>
+                            <constraint firstItem="3lu-le-OGv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="8RT-2a-gmH"/>
+                            <constraint firstItem="AaM-Db-9O1" firstAttribute="top" secondItem="nhE-BV-6Ou" secondAttribute="bottom" constant="132" id="GE2-JU-46o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AaM-Db-9O1" secondAttribute="bottom" constant="106" id="KlI-7Y-hj0"/>
+                            <constraint firstItem="AaM-Db-9O1" firstAttribute="trailing" secondItem="3lu-le-OGv" secondAttribute="trailing" id="bTE-f5-hnS"/>
+                            <constraint firstItem="AaM-Db-9O1" firstAttribute="trailing" secondItem="nhE-BV-6Ou" secondAttribute="trailing" id="hj5-E7-ynq"/>
+                            <constraint firstItem="AaM-Db-9O1" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="mR0-H7-elX"/>
+                            <constraint firstItem="AaM-Db-9O1" firstAttribute="leading" secondItem="nhE-BV-6Ou" secondAttribute="leading" id="qb8-Mh-q9e"/>
+                            <constraint firstItem="nhE-BV-6Ou" firstAttribute="top" secondItem="3lu-le-OGv" secondAttribute="bottom" constant="27" id="wol-eU-cSR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="playGameButton" destination="AaM-Db-9O1" id="Tyv-cL-Wwo"/>
+                        <segue destination="gFb-ZK-2Nq" kind="show" identifier="homePageToGamePage" id="bSn-mG-bzf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="136.69950738916256"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="Fg0-ls-nQh">
+            <objects>
+                <viewController id="gFb-ZK-2Nq" customClass="GameViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kWq-NP-bbX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="alo-et-Nrg">
+                                <rect key="frame" x="25.333333333333343" y="44" width="324.33333333333326" height="257"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1F-vE-NP8">
+                                <rect key="frame" x="25.333333333333343" y="326" width="324.33333333333326" height="80"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZj-uj-2CY">
+                                <rect key="frame" x="16" y="661.66666666666663" width="343" height="51.333333333333371"/>
+                                <color key="backgroundColor" red="0.47797650098800659" green="0.90984183549880981" blue="0.40190920233726501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="19"/>
+                                <state key="normal" title="Confirm Guess">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkGuess:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="2bC-HV-W5J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26E-6F-USf">
+                                <rect key="frame" x="209" y="734" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.0087764021009206772" green="0.41033291816711426" blue="0.98555141687393188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="uHP-uH-Tu6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voM-L5-pey">
+                                <rect key="frame" x="16" y="734" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.91676360368728638" green="0.04758201539516449" blue="0.32189074158668518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Quit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="quitPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="daY-Xr-tbC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Guesses: " lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBg-qT-UWe">
+                                <rect key="frame" x="25.333333333333343" y="411" width="324.33333333333326" height="51"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="foX-Qj-cjr" userLabel="Whole Stack View">
+                                <rect key="frame" x="18.666666666666657" y="521" width="337.66666666666674" height="132"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7bc-0W-dyh" userLabel="Top Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="66"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBI-e2-WBI">
+                                                <rect key="frame" x="0.0" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="A"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="pCo-7H-nwR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgB-KN-rPf">
+                                                <rect key="frame" x="26" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="B"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="wpC-TF-Efi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWS-ks-6yK">
+                                                <rect key="frame" x="52" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="C"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="QSj-bp-2Bl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjM-as-Pvr">
+                                                <rect key="frame" x="78" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="D"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="rKP-9y-KLV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKx-BM-jrd">
+                                                <rect key="frame" x="104" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="E"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="Xzs-V1-Bke"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqt-3W-DN6">
+                                                <rect key="frame" x="130" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="F"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="FBR-4q-80C"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFr-dm-hBW">
+                                                <rect key="frame" x="156" y="0.0" width="25.666666666666657" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="G"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="sJv-a7-pJ1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xR-yb-MOX">
+                                                <rect key="frame" x="181.66666666666669" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="H"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="u86-Ka-p6b"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8E-oq-d6m">
+                                                <rect key="frame" x="207.66666666666669" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="I"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="5Zx-df-ZKE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agc-9a-fUN">
+                                                <rect key="frame" x="233.66666666666669" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="J"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="fgc-Oe-wAX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef0-rH-gdm">
+                                                <rect key="frame" x="259.66666666666663" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="K"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="Zkn-XM-TjP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMT-ni-96k">
+                                                <rect key="frame" x="285.66666666666663" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="L"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="sFC-V4-UCF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6K-pC-mEa">
+                                                <rect key="frame" x="311.66666666666663" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="M"/>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="2ta-67-Rpc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Beb-0v-k79" userLabel="Bottom Stack View">
+                                        <rect key="frame" x="0.0" y="66" width="337.66666666666669" height="66"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uju-yi-sFL">
+                                                <rect key="frame" x="0.0" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="N">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="RdH-X4-Nog"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KF-7g-ysk">
+                                                <rect key="frame" x="26" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="O">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="H53-rM-QBJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNN-g5-46t">
+                                                <rect key="frame" x="52" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="P">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="q9m-co-h9N"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6r-4h-nL8">
+                                                <rect key="frame" x="78" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="Q">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="HkA-JX-hsC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nb-W9-vlA">
+                                                <rect key="frame" x="104" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="R">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="I7k-Kv-ouC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXq-iz-NoQ">
+                                                <rect key="frame" x="130" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="S">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="uSS-AS-SwQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNo-63-NU3">
+                                                <rect key="frame" x="156" y="0.0" width="25.666666666666657" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="T">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="1mZ-Rr-iAN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAB-a1-Gtb">
+                                                <rect key="frame" x="181.66666666666669" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="U">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="efP-Og-2wT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oou-bB-DZp">
+                                                <rect key="frame" x="207.66666666666669" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="V">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="wbD-uY-rrO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBz-33-9bp">
+                                                <rect key="frame" x="233.66666666666669" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="W">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="jqW-c7-ifH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrN-e7-gku">
+                                                <rect key="frame" x="259.66666666666663" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="X">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="Ge9-fz-JVl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTr-G3-zf5">
+                                                <rect key="frame" x="285.66666666666663" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="Y">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="o4m-aZ-1pJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEE-gy-tjm">
+                                                <rect key="frame" x="311.66666666666663" y="0.0" width="26" height="66"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <state key="normal" title="Z">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letterPressed:" destination="gFb-ZK-2Nq" eventType="touchUpInside" id="VFK-pe-ngV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7bc-0W-dyh" firstAttribute="top" secondItem="foX-Qj-cjr" secondAttribute="top" id="3k2-E3-EUn"/>
+                                    <constraint firstItem="Beb-0v-k79" firstAttribute="leading" secondItem="foX-Qj-cjr" secondAttribute="leading" id="53x-cn-nam"/>
+                                    <constraint firstAttribute="trailing" secondItem="Beb-0v-k79" secondAttribute="trailing" id="Ec3-T6-lDy"/>
+                                    <constraint firstItem="Beb-0v-k79" firstAttribute="bottom" secondItem="foX-Qj-cjr" secondAttribute="bottom" id="JeF-nM-8Kj"/>
+                                    <constraint firstItem="7bc-0W-dyh" firstAttribute="bottom" secondItem="Beb-0v-k79" secondAttribute="top" id="Qkx-7B-Rj3"/>
+                                    <constraint firstItem="7bc-0W-dyh" firstAttribute="trailing" secondItem="foX-Qj-cjr" secondAttribute="trailing" id="a1V-ts-ZxT"/>
+                                    <constraint firstItem="Beb-0v-k79" firstAttribute="top" secondItem="7bc-0W-dyh" secondAttribute="bottom" id="gFw-p3-Jcg"/>
+                                    <constraint firstItem="7bc-0W-dyh" firstAttribute="leading" secondItem="foX-Qj-cjr" secondAttribute="leading" id="xcp-E8-6O1"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgk-27-v6I">
+                                <rect key="frame" x="124" y="457" width="112.66666666666669" height="23"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="alo-et-Nrg" firstAttribute="width" secondItem="d9x-IH-juU" secondAttribute="width" multiplier="0.85" constant="5.8999999999999773" id="02n-kH-31L"/>
+                            <constraint firstItem="foX-Qj-cjr" firstAttribute="bottom" secondItem="mZj-uj-2CY" secondAttribute="bottom" constant="-60" id="0mp-2F-Pls"/>
+                            <constraint firstItem="voM-L5-pey" firstAttribute="width" secondItem="d9x-IH-juU" secondAttribute="width" multiplier="0.3" constant="37.5" id="5Jh-Jr-HrL"/>
+                            <constraint firstItem="PBg-qT-UWe" firstAttribute="width" secondItem="alo-et-Nrg" secondAttribute="width" id="6Jc-vp-Zvl"/>
+                            <constraint firstItem="26E-6F-USf" firstAttribute="bottom" secondItem="d9x-IH-juU" secondAttribute="bottom" id="6Pk-rA-Aez"/>
+                            <constraint firstItem="voM-L5-pey" firstAttribute="leading" secondItem="d9x-IH-juU" secondAttribute="leading" constant="16" id="7eK-72-y6F"/>
+                            <constraint firstItem="foX-Qj-cjr" firstAttribute="height" secondItem="d9x-IH-juU" secondAttribute="height" multiplier="0.18" id="8fU-e2-Clp"/>
+                            <constraint firstItem="mZj-uj-2CY" firstAttribute="bottom" secondItem="d9x-IH-juU" secondAttribute="bottom" constant="-65" id="ADS-Ya-SPf"/>
+                            <constraint firstItem="alo-et-Nrg" firstAttribute="height" secondItem="d9x-IH-juU" secondAttribute="height" multiplier="0.35" id="CDM-Fo-kNv"/>
+                            <constraint firstItem="c1F-vE-NP8" firstAttribute="height" secondItem="d9x-IH-juU" secondAttribute="height" multiplier="0.2" constant="-66.800000000000011" id="CKB-wy-h3D"/>
+                            <constraint firstItem="26E-6F-USf" firstAttribute="height" secondItem="d9x-IH-juU" secondAttribute="height" multiplier="0.06" id="G7F-ea-RBq"/>
+                            <constraint firstItem="26E-6F-USf" firstAttribute="width" secondItem="d9x-IH-juU" secondAttribute="width" multiplier="0.3" constant="37.5" id="IFe-UK-B78"/>
+                            <constraint firstItem="Cgk-27-v6I" firstAttribute="leading" secondItem="d9x-IH-juU" secondAttribute="leading" constant="124" id="ILc-Fb-qRX"/>
+                            <constraint firstItem="mZj-uj-2CY" firstAttribute="height" secondItem="d9x-IH-juU" secondAttribute="height" multiplier="0.07" id="JSN-gD-Hhu"/>
+                            <constraint firstItem="c1F-vE-NP8" firstAttribute="centerX" secondItem="d9x-IH-juU" secondAttribute="centerX" id="Ks3-aJ-zyz"/>
+                            <constraint firstItem="c1F-vE-NP8" firstAttribute="width" secondItem="alo-et-Nrg" secondAttribute="width" id="Leq-er-VKa"/>
+                            <constraint firstItem="PBg-qT-UWe" firstAttribute="height" secondItem="d9x-IH-juU" secondAttribute="height" multiplier="0.13" constant="-44.420000000000002" id="OZo-Uc-cDo"/>
+                            <constraint firstItem="PBg-qT-UWe" firstAttribute="centerX" secondItem="d9x-IH-juU" secondAttribute="centerX" id="SeL-Ok-izj"/>
+                            <constraint firstItem="voM-L5-pey" firstAttribute="bottom" secondItem="d9x-IH-juU" secondAttribute="bottom" id="TEO-Uw-AQb"/>
+                            <constraint firstItem="Cgk-27-v6I" firstAttribute="width" secondItem="d9x-IH-juU" secondAttribute="width" multiplier="0.3" id="Tyu-Fo-t04"/>
+                            <constraint firstItem="mZj-uj-2CY" firstAttribute="centerX" secondItem="d9x-IH-juU" secondAttribute="centerX" id="WzH-aY-2bc"/>
+                            <constraint firstItem="Cgk-27-v6I" firstAttribute="bottom" secondItem="d9x-IH-juU" secondAttribute="bottom" constant="-298" id="bl2-K1-kaz"/>
+                            <constraint firstItem="voM-L5-pey" firstAttribute="height" secondItem="d9x-IH-juU" secondAttribute="height" multiplier="0.06" id="cSH-Zg-pPB"/>
+                            <constraint firstItem="26E-6F-USf" firstAttribute="trailing" secondItem="d9x-IH-juU" secondAttribute="trailing" constant="-16" id="fDL-KC-1YX"/>
+                            <constraint firstItem="26E-6F-USf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="voM-L5-pey" secondAttribute="trailing" constant="8" symbolic="YES" id="fd3-Nt-f0H"/>
+                            <constraint firstItem="alo-et-Nrg" firstAttribute="centerX" secondItem="d9x-IH-juU" secondAttribute="centerX" id="gyp-ML-P79"/>
+                            <constraint firstItem="foX-Qj-cjr" firstAttribute="centerX" secondItem="d9x-IH-juU" secondAttribute="centerX" id="mhA-mc-f6J"/>
+                            <constraint firstItem="foX-Qj-cjr" firstAttribute="width" secondItem="d9x-IH-juU" secondAttribute="width" multiplier="0.9" id="nSZ-E9-fPy"/>
+                            <constraint firstItem="Cgk-27-v6I" firstAttribute="leading" secondItem="mZj-uj-2CY" secondAttribute="leading" constant="108" id="sZ9-YB-xBw"/>
+                            <constraint firstItem="PBg-qT-UWe" firstAttribute="top" secondItem="c1F-vE-NP8" secondAttribute="bottom" constant="5" id="sjL-VI-JqB"/>
+                            <constraint firstItem="c1F-vE-NP8" firstAttribute="top" secondItem="alo-et-Nrg" secondAttribute="bottom" constant="25" id="yQL-ns-Mlk"/>
+                            <constraint firstItem="alo-et-Nrg" firstAttribute="top" secondItem="d9x-IH-juU" secondAttribute="top" id="zo4-i4-OZF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d9x-IH-juU"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmGuessButton" destination="mZj-uj-2CY" id="OGn-Dz-vZM"/>
+                        <outlet property="currentGuess" destination="Cgk-27-v6I" id="uAe-51-kzJ"/>
+                        <outlet property="currentPhraseOmitted" destination="c1F-vE-NP8" id="MjN-gI-uln"/>
+                        <outlet property="gameImage" destination="alo-et-Nrg" id="sxi-8q-pqY"/>
+                        <outlet property="incorrectGuessesLabel" destination="PBg-qT-UWe" id="O9q-Jf-exq"/>
+                        <outlet property="quitButton" destination="voM-L5-pey" id="EWe-Lw-pZU"/>
+                        <outlet property="restartButton" destination="26E-6F-USf" id="R3e-VX-OK0"/>
+                        <outletCollection property="letterButtons" destination="GBI-e2-WBI" collectionClass="NSMutableArray" id="Mwn-jX-9Dq"/>
+                        <outletCollection property="letterButtons" destination="DgB-KN-rPf" collectionClass="NSMutableArray" id="rcm-jf-HDt"/>
+                        <outletCollection property="letterButtons" destination="YWS-ks-6yK" collectionClass="NSMutableArray" id="TQY-P8-P7R"/>
+                        <outletCollection property="letterButtons" destination="XjM-as-Pvr" collectionClass="NSMutableArray" id="Ayf-fx-GcK"/>
+                        <outletCollection property="letterButtons" destination="DKx-BM-jrd" collectionClass="NSMutableArray" id="jtB-d9-9QF"/>
+                        <outletCollection property="letterButtons" destination="Iqt-3W-DN6" collectionClass="NSMutableArray" id="YRr-S6-O09"/>
+                        <outletCollection property="letterButtons" destination="oFr-dm-hBW" collectionClass="NSMutableArray" id="jVl-jC-jHe"/>
+                        <outletCollection property="letterButtons" destination="8xR-yb-MOX" collectionClass="NSMutableArray" id="Nqp-4P-RA3"/>
+                        <outletCollection property="letterButtons" destination="C8E-oq-d6m" collectionClass="NSMutableArray" id="vYR-Re-lvz"/>
+                        <outletCollection property="letterButtons" destination="agc-9a-fUN" collectionClass="NSMutableArray" id="KA0-zj-MnG"/>
+                        <outletCollection property="letterButtons" destination="Ef0-rH-gdm" collectionClass="NSMutableArray" id="GC5-nr-Xin"/>
+                        <outletCollection property="letterButtons" destination="IMT-ni-96k" collectionClass="NSMutableArray" id="IeN-hL-Dsl"/>
+                        <outletCollection property="letterButtons" destination="N6K-pC-mEa" collectionClass="NSMutableArray" id="b78-UM-UAd"/>
+                        <outletCollection property="letterButtons" destination="Uju-yi-sFL" collectionClass="NSMutableArray" id="quB-wo-ApP"/>
+                        <outletCollection property="letterButtons" destination="HNN-g5-46t" collectionClass="NSMutableArray" id="KNJ-6Q-8fO"/>
+                        <outletCollection property="letterButtons" destination="7KF-7g-ysk" collectionClass="NSMutableArray" id="uWI-Mh-CyC"/>
+                        <outletCollection property="letterButtons" destination="y6r-4h-nL8" collectionClass="NSMutableArray" id="HT0-w2-Db9"/>
+                        <outletCollection property="letterButtons" destination="6nb-W9-vlA" collectionClass="NSMutableArray" id="t23-3Y-MJ8"/>
+                        <outletCollection property="letterButtons" destination="qXq-iz-NoQ" collectionClass="NSMutableArray" id="RQg-gH-VQH"/>
+                        <outletCollection property="letterButtons" destination="jNo-63-NU3" collectionClass="NSMutableArray" id="dta-gs-9Rx"/>
+                        <outletCollection property="letterButtons" destination="cAB-a1-Gtb" collectionClass="NSMutableArray" id="Ylp-in-T9y"/>
+                        <outletCollection property="letterButtons" destination="oou-bB-DZp" collectionClass="NSMutableArray" id="g1G-UM-Vs8"/>
+                        <outletCollection property="letterButtons" destination="iBz-33-9bp" collectionClass="NSMutableArray" id="zs3-Yi-sBt"/>
+                        <outletCollection property="letterButtons" destination="WrN-e7-gku" collectionClass="NSMutableArray" id="qf3-Q5-h3m"/>
+                        <outletCollection property="letterButtons" destination="wTr-G3-zf5" collectionClass="NSMutableArray" id="WBD-GC-NDu"/>
+                        <outletCollection property="letterButtons" destination="rEE-gy-tjm" collectionClass="NSMutableArray" id="iHz-9h-kDI"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="gamePageToHomePage" id="GJu-lR-aIH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSQ-qk-nx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888.79999999999995" y="136.69950738916256"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hangman7" width="165" height="197"/>
+    </resources>
+</document>
